@@ -1,34 +1,31 @@
-console.log("Rock, Paper, Scissors")
+// Global Variable
+let score = 0;
 
-// function print(a, b) {
-//   console.log("imprimir", a, b);
-// }
-// print("hola", true);
+// Alert Function
+function printMessage(message) {
+  if (message == "You win") {
+    score = score +1;
+  } else if (message == "You Lose") {
+    score = score -1;
+  }
+  const t = `${message}, Score : ${score}`
+  alert(t);
+  document.getElementById("score").innerHTML = score;
+}
 
-// function parseText(a) {
-//  return a.replaceAll("-"," ")
-//  console.log("Aqui estoy");
-// } 
-
-// const texto = "Hola-Mundo";
-
-// const textoLimpio = parseText(texto);
-
-// console.log(textoLimpio);
-
-function gameCarlos() {
+// Game Logic
+function game(userOpt) {
   const scissors = ["rock","paper"];
   const rock = ["paper","scissors"];
   const paper = ["scissors","rock"];
   const options = ["rock", "paper", "scissors"];
   const pc = Math.floor(Math.random()*3);
-  let userOpt = prompt("1.rock 2.paper 3.scissors");
   let result = "";
   const userOptNum = parseInt(userOpt);
   
   if (userOptNum == pc + 1) {
     result = "Tie";
-    console.log (result);
+    alert(result);
     return
   }
   if (userOptNum == 1) {
@@ -53,46 +50,20 @@ function gameCarlos() {
     }
   }
   console.log(userOptNum, pc, options, result);
+  printMessage(result);
 }
 
-function game() {
-  const options = ["Rock", "Paper", "Scissors"];
-  const pc = Math.floor(Math.random()*3);
-  let userOpt = prompt("Rock, Paper, Scissors");
-  let result = "";
-
- //Rock winning condition
- if (userOpt === "Rock") {
-  if (options[pc] === "Rock") {
-    result = "You tie";
-  } else if (options[pc] === "Paper") {
-    result = "Pc win";
-  } else if (options[pc] === "Scissors") {
-    result = "You win";
+// Trigger Events
+function main() {
+  document.getElementById("s").onclick = function() {
+    game("3");
   }
- } 
- // //Paper winning condition
- if (userOpt === "Paper") {
-  if (options[pc] === "Rock") {
-    result = "You win";
-  } else if (options[pc] === "Paper") {
-    result = "You tie";
-  } else if (options[pc] === "Scissors") {
-    result = "Pc  win";
+  document.getElementById("r").onclick = function() {
+    game("1");
   }
- }
- // //Scissors winning condition 
- if (userOpt === "Scissors") {
-  if (options[pc] === "Rock") {
-    result = "Pc win";
-  } else if (options[pc] === "Paper") {
-    result = "You win";
-  } else if (options[pc] === "Scissors") {
-    result = "You tie";
+  document.getElementById("p").onclick = function() {
+    game("2");
   }
- }
-  console.log(userOpt, pc, options, result);
 }
 
-// game();
-// gameCarlos();
+main();
