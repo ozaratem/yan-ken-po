@@ -58,42 +58,32 @@ body {
   gap: 0 70px;
 }
 
-.rps .scissors {
-  margin: 0 50px;
+.rps .rpsOtp {
   width: 250px;
   height: 250px;
   background: #ffffff;
-  border: 10px solid #7fc97f;
   box-sizing: border-box;
   box-shadow: inset 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rps .rpsOtp:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 4px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.rps .scissors {
+  margin: 0 50px;
+  border: 10px solid #7fc97f;
 }
 
 .rps .rock {
-  width: 250px;
-  height: 250px;
-  background: #ffffff;
   border: 10px solid #f0027f;
-  box-sizing: border-box;
-  box-shadow: inset 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .rps .paper {
-  width: 250px;
-  height: 250px;
-  background: #ffffff;
   border: 10px solid #386cb0;
-  box-sizing: border-box;
-  box-shadow: inset 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
